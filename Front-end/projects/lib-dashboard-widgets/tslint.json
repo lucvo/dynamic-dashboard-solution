@@ -1,0 +1,17 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "dashbaordWidgets",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "dashbaord-widgets",
+      "kebab-case"
+    ]
+  }
+}
