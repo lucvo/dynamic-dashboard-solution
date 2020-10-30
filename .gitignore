@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Back-end/EnterpriseDashboardSolution/DynamicLayout.Core/obj
+/Back-end/EnterpriseDashboardSolution/.vs/EnterpriseDashboardSolution/v16/TestStore/0/testlog.manifest
+/Back-end/EnterpriseDashboardSolution/.vs/EnterpriseDashboardSolution/v16/TestStore/0/000.testlog
+/Front-end/samples/dist/dynamic-core-0.0.5.tgz
+/Front-end/samples/dist/dynamic-core-0.0.4.tgz
+/Front-end/samples/dist/dynamic-core-0.0.3.tgz
