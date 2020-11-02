@@ -15,11 +15,7 @@ export class DashboardSettingsService implements BaseSettingsService {
           name: 'workspace',
           component: 'Workspace',
           id: '1',
-        }
-      ],
-    },
-    {
-      items: [
+        },
         {
           name: 'reports',
           component: 'Report',

@@ -20,12 +20,14 @@
     "@angular/platform-browser": "^10.1.6",
     "@angular/platform-browser-dynamic": "^10.1.6",
     "@angular/router": "^10.1.6",
+    "ngx-take-until-destroy": "^5.4.0",
     "primeflex": "^2.0.0",
     "primeicons": "^4.0.0",
     "primeng": "^10.0.3",
     "rxjs": "~6.6.0",
     "systemjs": "^6.7.1",
     "tslib": "^2.0.3",
+    "typescript-string-operations": "^1.4.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

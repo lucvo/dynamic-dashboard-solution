@@ -207,6 +207,46 @@
           }
         }
       }
+    },
+    "cores": {
+      "projectType": "library",
+      "root": "projects/cores",
+      "sourceRoot": "projects/cores/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/cores/tsconfig.lib.json",
+            "project": "projects/cores/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/cores/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/cores/src/test.ts",
+            "tsConfig": "projects/cores/tsconfig.spec.json",
+            "karmaConfig": "projects/cores/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/cores/tsconfig.lib.json",
+              "projects/cores/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "enterprise-dynamic-dashboard",

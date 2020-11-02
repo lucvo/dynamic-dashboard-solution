@@ -29,6 +29,10 @@
       ],
       "@dashboard-widgets/*": [
         "projects/lib-dashboard-widgets/src/lib/*"
+      ],
+      "cores": [
+        "dist/cores/cores",
+        "dist/cores"
       ]
     }
   }
