@@ -1,5 +1,5 @@
 {
-  "compileOnSave": false,
+  "compileOnSave": true,
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
@@ -7,33 +7,70 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+    "module": "esnext",
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
-    "module": "es2020",
     "lib": [
       "es2018",
       "dom"
     ],
     "paths": {
+      "comfort-cores": [
+        "dist/comfort-cores/comfort-cores",
+        "dist/comfort-cores"
+      ],
+      "comfort-controls": [
+        "dist/comfort-controls/comfort-controls",
+        "dist/comfort-controls"
+      ],
+      "comfort-feature-tenants": [
+        "dist/comfort-feature-tenants/comfort-feature-tenants",
+        "dist/comfort-feature-tenants"
+      ],
+      "@comfort/controls/*": [
+        "projects/comfort-controls/src/*"
+      ],
+      "@comfort/core/*": [
+        "projects/comfort-cores/src/*"
+      ],
+      "@comfort/tenant/*": [
+        "projects/comfort-feature-tenants/src/*"
+      ],
+      "@comfort/workflows/*": [
+        "projects/comfort-feature-workflows/src/*"
+      ],
+      "@comfort/common/*": [
+        "projects/comfort-feature-common/src/*"
+      ],
+      "@comfort/questionnaires/*": [
+        "projects/comfort-feature-questionnaires/src/*"
+      ],
+      "@comfort/processes/*": [
+        "projects/comfort-processes/src/*"
+      ],
+      "@comfort/checks/*": [
+        "projects/comfort-checks/src/*"
+      ],
+      "@comfort/ui-test/*": [
+        "projects/comfort-ui-test/src/*"
+      ],
+      "@comfort/ou/*": [
+        "projects/comfort-ou/src/*"
+      ],
+      "@comfort/risk/*": [
+        "projects/comfort-risks/src/*"
+      ],
       "dynamic-core": [
         "dist/dynamic-core/dynamic-core",
         "dist/dynamic-core"
-      ],
-      "@dashboard-core/*": [
-        "projects/dynamic-core/src/lib/*"
-      ],
-      "lib-dashboard-widgets": [
-        "dist/lib-dashboard-widgets/lib-dashboard-widgets",
-        "dist/lib-dashboard-widgets"
-      ],
-      "@dashboard-widgets/*": [
-        "projects/lib-dashboard-widgets/src/lib/*"
-      ],
-      "cores": [
-        "dist/cores/cores",
-        "dist/cores"
       ]
-    }
+    },
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }

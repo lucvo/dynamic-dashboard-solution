@@ -1,8 +1,6 @@
 {
   "name": "dynamic-core",
   "version": "0.0.5",
-  "scripts": {
-  },
   "peerDependencies": {
     "@angular/common": "^10.1.4",
     "@angular/core": "^10.1.4"
