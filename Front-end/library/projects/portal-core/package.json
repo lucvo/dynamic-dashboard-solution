@@ -1,5 +1,5 @@
 {
-  "name": "dynamic-core",
+  "name": "portal-core",
   "version": "1.0.0",
   "peerDependencies": {
     "@angular/common": "^10.1.4",

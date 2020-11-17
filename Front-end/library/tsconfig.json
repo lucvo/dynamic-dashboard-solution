@@ -64,6 +64,14 @@
       "dynamic-core": [
         "dist/dynamic-core/dynamic-core",
         "dist/dynamic-core"
+      ],
+      "portal-core": [
+        "dist/portal-core/portal-core",
+        "dist/portal-core"
+      ],
+      "tenant-core": [
+        "dist/tenant-core/tenant-core",
+        "dist/tenant-core"
       ]
     },
     "resolveJsonModule": true,

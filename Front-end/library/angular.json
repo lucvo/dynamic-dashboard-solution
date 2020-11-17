@@ -42,6 +42,86 @@
           }
         }
       }
+    },
+    "portal-core": {
+      "projectType": "library",
+      "root": "projects/portal-core",
+      "sourceRoot": "projects/portal-core/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/portal-core/tsconfig.lib.json",
+            "project": "projects/portal-core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/portal-core/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/portal-core/src/test.ts",
+            "tsConfig": "projects/portal-core/tsconfig.spec.json",
+            "karmaConfig": "projects/portal-core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/portal-core/tsconfig.lib.json",
+              "projects/portal-core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "tenant-core": {
+      "projectType": "library",
+      "root": "projects/tenant-core",
+      "sourceRoot": "projects/tenant-core/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/tenant-core/tsconfig.lib.json",
+            "project": "projects/tenant-core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/tenant-core/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tenant-core/src/test.ts",
+            "tsConfig": "projects/tenant-core/tsconfig.spec.json",
+            "karmaConfig": "projects/tenant-core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tenant-core/tsconfig.lib.json",
+              "projects/tenant-core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

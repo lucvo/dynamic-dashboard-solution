@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { BehaviorSubject } from 'rxjs';
 
-import { LayoutContent, Item } from '../models';
+import { LayoutContent, PageSetting } from '../models';
 import { BaseSettingsService } from '../services/base-settings.service';
 
 @Injectable({
@@ -21,7 +21,7 @@ export class DashboardService {
     this.subject.next(tracks);
   }
 
-  addItem = (item: Item) => {
+  addItem = (item: PageSetting) => {
     const state = this.subject.getValue();
 
     if (state[0].items.indexOf(item) !== -1 || state[1].items.indexOf(item) !== -1) {
@@ -34,7 +34,7 @@ export class DashboardService {
     this.subject.next(state);
   }
 
-  removeItem = (item: Item) => {
+  removeItem = (item: PageSetting) => {
     const state = this.subject.getValue();
     state.forEach(track => {
       track.items.forEach((i, index) => {

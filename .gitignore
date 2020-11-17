@@ -8,3 +8,11 @@
 /Front-end/samples/dist/dynamic-core-0.0.5.tgz
 /Front-end/samples/dist/dynamic-core-0.0.4.tgz
 /Front-end/samples/dist/dynamic-core-0.0.3.tgz
+/Back-end/LEASolution/.vs/LEASolution/v16
+/Back-end/LEASolution/Infrastructure/Infrastructure.Helpers.Migration/obj
+/Back-end/LEASolution/Modules/Modules.Cms/.vs/Modules.Cms
+/Back-end/LEASolution/Modules/Modules.Cms/Modules.Cms.Api/obj
+/Back-end/LEASolution/Modules/Modules.Cms/Modules.Cms.Core/obj
+/Back-end/LEASolution/Modules/Modules.Cms/Modules.Cms.Migrations/obj
+/Front-end/library/dist/dynamic-core
+/Front-end/library/node_modules
