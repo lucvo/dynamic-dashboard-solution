@@ -10,7 +10,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/dynamic-core/tsconfig.lib.json",
             "project": "projects/dynamic-core/ng-package.json"
@@ -50,7 +50,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/portal-core/tsconfig.lib.json",
             "project": "projects/portal-core/ng-package.json"
@@ -90,7 +90,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tenant-core/tsconfig.lib.json",
             "project": "projects/tenant-core/ng-package.json"
@@ -130,7 +130,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/primeng-dynamic-core/tsconfig.lib.json",
             "project": "projects/primeng-dynamic-core/ng-package.json"
@@ -170,7 +170,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/app-core/tsconfig.lib.json",
             "project": "projects/app-core/ng-package.json"
