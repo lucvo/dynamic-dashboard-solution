@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 
 import { LayoutContent, PageSetting } from '../models';
 import { BaseSettingsService } from '../services/base-settings.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -13,8 +14,10 @@ export class DashboardService {
   private subject = new BehaviorSubject<LayoutContent[]>(this.historyState);
   contents$ = this.subject.asObservable();
 
-  constructor(private settingsService: BaseSettingsService) {
-    this.loadContents();
+  constructor(private settingsService: BaseSettingsService, private route: ActivatedRoute) {
+    const id = this.route.snapshot.params["id"];
+
+    this.loadContents(id);
   }
 
   setState = (tracks: Array<LayoutContent>) => {
@@ -59,8 +62,8 @@ export class DashboardService {
     localStorage.setItem('citems', JSON.stringify(state));
   }
 
-  loadContents = () => {
-    this.historyState = this.settingsService.loadSettings();
+  loadContents = (id: any) => {
+    this.historyState = this.settingsService.loadSettings(id);
 
     this.subject.next(this.historyState);
 

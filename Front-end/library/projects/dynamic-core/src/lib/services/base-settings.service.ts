@@ -5,6 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export abstract class BaseSettingsService {
 
-  abstract loadSettings(): any;
+  abstract loadSettings(param: any): any;
 
 }
