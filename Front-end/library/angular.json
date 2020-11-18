@@ -122,6 +122,86 @@
           }
         }
       }
+    },
+    "primeng-dynamic-core": {
+      "projectType": "library",
+      "root": "projects/primeng-dynamic-core",
+      "sourceRoot": "projects/primeng-dynamic-core/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/primeng-dynamic-core/tsconfig.lib.json",
+            "project": "projects/primeng-dynamic-core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/primeng-dynamic-core/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/primeng-dynamic-core/src/test.ts",
+            "tsConfig": "projects/primeng-dynamic-core/tsconfig.spec.json",
+            "karmaConfig": "projects/primeng-dynamic-core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/primeng-dynamic-core/tsconfig.lib.json",
+              "projects/primeng-dynamic-core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "app-core": {
+      "projectType": "library",
+      "root": "projects/app-core",
+      "sourceRoot": "projects/app-core/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/app-core/tsconfig.lib.json",
+            "project": "projects/app-core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/app-core/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/app-core/src/test.ts",
+            "tsConfig": "projects/app-core/tsconfig.spec.json",
+            "karmaConfig": "projects/app-core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/app-core/tsconfig.lib.json",
+              "projects/app-core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LayoutComponent, LayoutOutletDirective, TemplateCardComponent, TemplateCardContainer } from '.';
+import { LayoutComponent, LayoutOutletDirective, TemplateCardComponent, TemplateCardContainer, BaseLayoutComponent } from '.';
 
 @NgModule({
-  declarations: [LayoutComponent, LayoutOutletDirective, TemplateCardComponent, TemplateCardContainer],
+  declarations: [BaseLayoutComponent, LayoutComponent, LayoutOutletDirective, TemplateCardComponent, TemplateCardContainer],
   imports: [CommonModule],
-  exports: [LayoutComponent, LayoutOutletDirective, TemplateCardComponent, TemplateCardContainer]
+  exports: [BaseLayoutComponent, LayoutComponent, LayoutOutletDirective, TemplateCardComponent, TemplateCardContainer]
 })
 export class DynamicLayoutModule { }

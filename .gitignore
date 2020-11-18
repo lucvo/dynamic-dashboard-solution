@@ -16,3 +16,5 @@
 /Back-end/LEASolution/Modules/Modules.Cms/Modules.Cms.Migrations/obj
 /Front-end/library/dist/dynamic-core
 /Front-end/library/node_modules
+/Front-end/library/dist
+/Front-end/samples/dist

@@ -19,6 +19,10 @@
       "shared-widgets": [
         "dist/shared-widgets/shared-widgets",
         "dist/shared-widgets"
+      ],
+      "primeng-dynamic-core": [
+        "dist/primeng-dynamic-core/primeng-dynamic-core",
+        "dist/primeng-dynamic-core"
       ]
     }
   }

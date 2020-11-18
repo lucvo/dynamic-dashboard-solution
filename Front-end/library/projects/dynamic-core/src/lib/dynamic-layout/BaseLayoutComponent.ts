@@ -1,7 +1,7 @@
 import {
   OnInit, ViewChildren,
   QueryList, ChangeDetectorRef,
-  AfterViewInit, Compiler, NgModuleFactory, Injector, Inject
+  AfterViewInit, Compiler, NgModuleFactory, Injector, Inject, Component
 } from '@angular/core';
 import { tap } from 'rxjs/operators';
 import { LayoutOutletDirective } from './layout-outlet.directive';
@@ -10,8 +10,10 @@ import { DashboardService } from './dynamic-layout.service';
 import { IMappedModules, DynamicModuleType, DYNAMIC_MODULES_MAP } from './mapped-modules.interface';
 import { TemplateCardContainer } from './template-card/template-card.container';
 
-
-export abstract class BaseLayoutComponent implements OnInit, AfterViewInit {
+@Component({
+  template: ' ',
+})
+export class BaseLayoutComponent implements OnInit, AfterViewInit {
   @ViewChildren(LayoutOutletDirective) dashboardOutlet: QueryList<LayoutOutletDirective>;
 
   containers: Array<LayoutContent> = [];
