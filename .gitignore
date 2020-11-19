@@ -18,3 +18,10 @@
 /Front-end/library/node_modules
 /Front-end/library/dist
 /Front-end/samples/dist
+/Services/Modules/Modules.Cms/.vs/Modules.Cms/DesignTimeBuild/*.v2
+/Services/Modules/Modules.Cms/.vs/Modules.Cms/v16/*.suo
+/Services/Modules/Modules.Cms/.vs/Modules.Cms/v16/TestStore/0/*.testlog
+/Services/Modules/Modules.Cms/.vs/Modules.Cms/v16/TestStore/0/*.manifest
+/Services/.vs/LEASolution/v16/*.suo
+/Services/.vs/LEASolution/v16/TestStore/0/*.testlog
+/Services/.vs/LEASolution/v16/TestStore/0/*.manifest
