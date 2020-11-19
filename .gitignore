@@ -25,3 +25,5 @@
 /Services/.vs/LEASolution/v16/*.suo
 /Services/.vs/LEASolution/v16/TestStore/0/*.testlog
 /Services/.vs/LEASolution/v16/TestStore/0/*.manifest
+.DS_Store
+/ClientApps/dist

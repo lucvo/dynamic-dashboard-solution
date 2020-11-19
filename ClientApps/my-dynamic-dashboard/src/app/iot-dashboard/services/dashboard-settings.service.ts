@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BaseSettingsService } from 'dynamic-core';
+import { BaseSettingsService, LayoutContent } from 'dynamic-core';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,9 +8,9 @@ import { BaseSettingsService } from 'dynamic-core';
 export class DashboardSettingsService implements BaseSettingsService {
 
   constructor() { }
-  loadSettings(): any {
+  loadSettings(): Observable<any[]> {
     console.log('call dashboard setting service');
-    return [{
+    return of([{
       items: [
         {
           name: 'workspace',
@@ -23,7 +24,7 @@ export class DashboardSettingsService implements BaseSettingsService {
         },
       ],
     }
-  ];
+  ]);
   }
 
 }
