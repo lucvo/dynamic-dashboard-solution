@@ -7,10 +7,10 @@ import { BaseSettingsService, DynamicLayoutModule, DYNAMIC_MODULES_MAP } from 'd
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardContainerMapper } from './dashboard-container.map';
 import { DashboardSettingsService } from './services/dashboard-settings.service';
-
+import { PrimeDynamicCoreModule } from 'primeng-dynamic-core'
 @NgModule({
   imports: [
-    CommonModule, WorkspaceModule, ReportModule, DashboardRoutingModule, DynamicLayoutModule
+    CommonModule, WorkspaceModule, ReportModule, DashboardRoutingModule, PrimeDynamicCoreModule, DynamicLayoutModule
   ],
   declarations:  [ DashboardComponent ],
   providers: [

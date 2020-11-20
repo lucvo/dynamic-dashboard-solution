@@ -10,7 +10,7 @@ import { UsageInsightsComponent } from 'projects/shared-widgets/src/lib/usage-in
     CommonModule
   ],
   declarations: [
-    ReportContainerComponent
+    ReportContainerComponent, BookingHistoryComponent, TemperaturesComponent, UsageInsightsComponent
   ],
   entryComponents: [ReportContainerComponent]
 

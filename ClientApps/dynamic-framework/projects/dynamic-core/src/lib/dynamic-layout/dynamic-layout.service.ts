@@ -5,6 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 import { LayoutContent, PageSetting } from '../models';
 import { BaseSettingsService } from '../services/base-settings.service';
 import { ActivatedRoute } from '@angular/router';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -59,18 +60,23 @@ export class DashboardService {
 
   private saveTracksToStorage = () => {
     const state = this.subject.getValue();
-    localStorage.setItem('citems', JSON.stringify(state));
+    console.log(JSON.stringify(state));
+    // localStorage.setItem('citems', JSON.stringify(state));
   }
 
   loadContents = (id: any) => {
-    this.historyState = this.settingsService.loadSettings(id);
+    this.settingsService.loadSettings(id).pipe(
+        map((state:Array<LayoutContent>)=>{
+          this.historyState = state;
+          this.subject.next(this.historyState);
+        })
+      )
+      .subscribe(()=>{
 
-    this.subject.next(this.historyState);
-
-    this.loadTracksFromStorage();
-
-    this.contents$.subscribe(() => {
-      this.saveTracksToStorage();
-    });
+        // this.loadTracksFromStorage();
+        this.contents$.subscribe(() => {
+          this.saveTracksToStorage();
+        });
+      });
   }
 }
