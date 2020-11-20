@@ -6,20 +6,20 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class DashboardSettingsService implements BaseSettingsService {
-
-  constructor() { }
   loadSettings(): Observable<any[]> {
     console.log('call dashboard setting service');
     return of([{
       items: [
         {
           name: 'workspace',
-          component: 'Workspace',
+          cName: 'Workspace',
+          title: "Workspace",
           id: '1',
         },
         {
           name: 'reports',
-          component: 'Report',
+          cName: 'Report',
+          title: "report",
           id: '2',
         },
       ],
