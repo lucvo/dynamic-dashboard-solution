@@ -6,19 +6,18 @@ import { LayoutContent, PageSetting } from '../models';
 import { BaseSettingsService } from '../services/base-settings.service';
 import { ActivatedRoute } from '@angular/router';
 import { map, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DashboardService {
+
   historyState: Array<LayoutContent> = [];
   private subject = new BehaviorSubject<LayoutContent[]>(this.historyState);
-  contents$ = this.subject.asObservable();
 
-  constructor(private settingsService: BaseSettingsService, private route: ActivatedRoute) {
-    const id = this.route.snapshot.params["id"];
+  constructor(private settingsService: BaseSettingsService) {
 
-    this.loadContents(id);
   }
 
   setState = (tracks: Array<LayoutContent>) => {
@@ -51,32 +50,13 @@ export class DashboardService {
     this.subject.next(state);
   }
 
-  private loadTracksFromStorage = () => {
-    const tracks = JSON.parse(localStorage.getItem('citems') as string);
-    if (tracks) {
-      this.subject.next(tracks);
-    }
-  }
-
-  private saveTracksToStorage = () => {
-    const state = this.subject.getValue();
-    console.log(JSON.stringify(state));
-    // localStorage.setItem('citems', JSON.stringify(state));
-  }
-
-  loadContents = (id: any) => {
-    this.settingsService.loadSettings(id).pipe(
-        map((state:Array<LayoutContent>)=>{
-          this.historyState = state;
-          this.subject.next(this.historyState);
-        })
-      )
-      .subscribe(()=>{
-
-        // this.loadTracksFromStorage();
-        this.contents$.subscribe(() => {
-          this.saveTracksToStorage();
-        });
-      });
+  loadContents = (id: any): Observable<Array<any>> => {
+    return this.settingsService.loadSettings(id).pipe(
+      map((state: Array<LayoutContent>) => {
+        this.historyState = state;
+        this.subject.next(this.historyState);
+        return state;
+      })
+    );
   }
 }

@@ -9,6 +9,7 @@ import { PageSetting, LayoutContent } from '../models';
 import { DashboardService } from './dynamic-layout.service';
 import { IMappedModules, DynamicModuleType, DYNAMIC_MODULES_MAP } from './mapped-modules.interface';
 import { TemplateCardContainer } from './template-card/template-card.container';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   template: ' ',
@@ -21,20 +22,21 @@ export class BaseLayoutComponent implements OnInit, AfterViewInit {
     protected cd: ChangeDetectorRef,
     protected injector: Injector,
     protected compiler: Compiler,
-    protected dashboardService: DashboardService,
+    protected service: DashboardService,
+    private route: ActivatedRoute,
     @Inject(DYNAMIC_MODULES_MAP) protected modulesMap: IMappedModules
   ) { }
 
   ngOnInit(): void {
-    this.dashboardService.contents$
-      .pipe(
-        tap(tracks => (this.containers = tracks))
-        /* Make sure to unsubscribe! */
-      )
-      .subscribe(() => {
-        this.cd.detectChanges();
-        this.loadContents();
-      });
+    const id = this.route.snapshot.params['id'];
+    this.service.loadContents(id).pipe(
+      tap(tracks => (this.containers = tracks))
+      /* Make sure to unsubscribe! */
+    )
+    .subscribe(() => {
+      this.cd.detectChanges();
+      this.loadContents();
+    });
   }
 
   ngAfterViewInit(): void {
@@ -49,7 +51,7 @@ export class BaseLayoutComponent implements OnInit, AfterViewInit {
       this.loadContent(template, template.item);
     });
     this.cd.detectChanges();
-  };
+  }
 
   loadContent = async (template: LayoutOutletDirective, item: PageSetting) => {
     if (!item.name) {
@@ -72,11 +74,11 @@ export class BaseLayoutComponent implements OnInit, AfterViewInit {
     const componentRef = viewContainerRef.createComponent(factory);
     const instance = componentRef.instance as TemplateCardContainer;
     instance.item = item;
-  };
+  }
 
   changed = (items: Array<PageSetting>, trackIndex: number) => {
     const state = this.containers;
     state[trackIndex].items = items as Array<PageSetting>;
-    this.dashboardService.setState(state);
-  };
+    this.service.setState(state);
+  }
 }

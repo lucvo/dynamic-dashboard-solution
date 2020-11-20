@@ -1,6 +1,6 @@
 {
-  "name": "primeng-dynamic-core",
-  "version": "0.1.1",
+  "name": "prime-dynamic-core",
+  "version": "0.1.5",
   "peerDependencies": {
     "@angular/common": "^9.0.5 || ^10.0.3 || ^11.0.1",
     "@angular/core": "^9.0.5 || ^10.0.3 || ^11.0.1"
