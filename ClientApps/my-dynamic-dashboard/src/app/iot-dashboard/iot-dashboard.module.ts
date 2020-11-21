@@ -11,7 +11,7 @@ import { PrimeDynamicCoreModule } from 'primeng-dynamic-core'
 
 @NgModule({
   imports: [
-    CommonModule, WorkspaceModule, ReportModule, DashboardRoutingModule, 
+    CommonModule, WorkspaceModule, ReportModule, DashboardRoutingModule,
     PrimeDynamicCoreModule
   ],
   declarations:  [ DashboardComponent ],

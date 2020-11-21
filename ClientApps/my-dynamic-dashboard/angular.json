@@ -30,7 +30,7 @@
             "styles": [
               "src/styles.scss",
               "node_modules/primeicons/primeicons.css",
-              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/themes/md-light-deeppurple/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/primeflex/primeflex.css"
             ],
@@ -160,6 +160,86 @@
             "tsConfig": [
               "projects/primeng-dynamic-core/tsconfig.lib.json",
               "projects/primeng-dynamic-core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "shared-widgets": {
+      "projectType": "library",
+      "root": "projects/shared-widgets",
+      "sourceRoot": "projects/shared-widgets/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/shared-widgets/tsconfig.lib.json",
+            "project": "projects/shared-widgets/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/shared-widgets/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/shared-widgets/src/test.ts",
+            "tsConfig": "projects/shared-widgets/tsconfig.spec.json",
+            "karmaConfig": "projects/shared-widgets/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/shared-widgets/tsconfig.lib.json",
+              "projects/shared-widgets/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "md-dynamic-core": {
+      "projectType": "library",
+      "root": "projects/md-dynamic-core",
+      "sourceRoot": "projects/md-dynamic-core/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/md-dynamic-core/tsconfig.lib.json",
+            "project": "projects/md-dynamic-core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/md-dynamic-core/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/md-dynamic-core/src/test.ts",
+            "tsConfig": "projects/md-dynamic-core/tsconfig.spec.json",
+            "karmaConfig": "projects/md-dynamic-core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/md-dynamic-core/tsconfig.lib.json",
+              "projects/md-dynamic-core/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

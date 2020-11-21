@@ -1,22 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReportContainerComponent } from './report-container.component';
-import { BookingHistoryComponent } from '../../shared-widgets/booking-history/booking-history.component';
-import { TemperaturesComponent } from '../../shared-widgets/temperatures/temperatures.component';
-import { UsageInsightsComponent } from '../../shared-widgets/usage-insights/usage-insights.component';
 import { CardModule } from 'primeng/card';
 import { PanelModule } from 'primeng/panel';
+import { SharedWidgetsModule } from 'projects/shared-widgets/src/lib/shared-widgets.module';
 @NgModule({
   imports: [
     CommonModule,
     CardModule,
-    PanelModule
+    PanelModule,
+    SharedWidgetsModule
   ],
   declarations: [
-    ReportContainerComponent, 
-    BookingHistoryComponent, 
-    TemperaturesComponent, 
-    UsageInsightsComponent
+    ReportContainerComponent,
   ],
   entryComponents: [ReportContainerComponent]
 
