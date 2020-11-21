@@ -27,3 +27,4 @@
 /Services/.vs/LEASolution/v16/TestStore/0/*.manifest
 .DS_Store
 /ClientApps/dist
+ClientApps/dynamic-framework/package-lock.json
