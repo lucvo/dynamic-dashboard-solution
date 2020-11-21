@@ -31,7 +31,8 @@
               "src/styles.scss",
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/saga-blue/theme.css",
-              "node_modules/primeng/resources/primeng.min.css"
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeflex/primeflex.css"
             ],
             "scripts": []
           },
@@ -123,46 +124,6 @@
             "production": {
               "devServerTarget": "my-dynamic-dashboard:serve:production"
             }
-          }
-        }
-      }
-    },
-    "shared-widgets": {
-      "projectType": "library",
-      "root": "projects/shared-widgets",
-      "sourceRoot": "projects/shared-widgets/src",
-      "prefix": "widgets",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "tsConfig": "projects/shared-widgets/tsconfig.lib.json",
-            "project": "projects/shared-widgets/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/shared-widgets/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/shared-widgets/src/test.ts",
-            "tsConfig": "projects/shared-widgets/tsconfig.spec.json",
-            "karmaConfig": "projects/shared-widgets/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/shared-widgets/tsconfig.lib.json",
-              "projects/shared-widgets/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         }
       }
