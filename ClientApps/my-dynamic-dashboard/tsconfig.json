@@ -18,11 +18,17 @@
     "paths": {
       "shared-widgets": [
         "dist/shared-widgets/shared-widgets",
-        "dist/shared-widgets"
+        "dist/shared-widgets",
+        "projects/shared-widgets/src/lib",
+        "projects/shared-widgets/src"
       ],
       "primeng-dynamic-core": [
         "dist/primeng-dynamic-core/primeng-dynamic-core",
         "dist/primeng-dynamic-core"
+      ],
+      "md-dynamic-core": [
+        "dist/md-dynamic-core/md-dynamic-core",
+        "dist/md-dynamic-core"
       ]
     }
   }

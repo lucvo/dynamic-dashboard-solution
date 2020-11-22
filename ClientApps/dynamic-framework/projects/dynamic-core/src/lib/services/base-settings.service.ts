@@ -6,7 +6,5 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export abstract class BaseSettingsService {
-
   abstract loadSettings(param: any): Observable<any>;
-
 }

@@ -1,12 +1,12 @@
 import {
-  Component, OnInit, ViewChildren,
-  QueryList, ChangeDetectorRef,
-  AfterViewInit, Compiler, NgModuleFactory, Injector, Inject
+  Component, ChangeDetectorRef,
+  Compiler, Injector, Inject
 } from '@angular/core';
 
 import { DashboardService } from '../dynamic-layout.service';
-import { IMappedModules, DynamicModuleType, DYNAMIC_MODULES_MAP } from '../mapped-modules.interface';
+import { IMappedModules, DYNAMIC_MODULES_MAP } from '../mapped-modules.interface';
 import { BaseLayoutComponent } from '../BaseLayoutComponent';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -20,9 +20,10 @@ export class LayoutComponent extends BaseLayoutComponent {
     injector: Injector,
     compiler: Compiler,
     dashboardService: DashboardService,
+    route: ActivatedRoute,
     @Inject(DYNAMIC_MODULES_MAP) modulesMap: IMappedModules
   ) {
-    super(cd, injector, compiler, dashboardService, modulesMap);
+    super(cd, injector, compiler, dashboardService, route, modulesMap);
   }
 }
 

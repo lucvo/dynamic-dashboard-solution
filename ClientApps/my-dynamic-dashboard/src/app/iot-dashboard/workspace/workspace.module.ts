@@ -1,13 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WorkspaceContainerComponent } from './workspace-container/workspace-container.component';
-import { WorkspaceComponent } from 'projects/shared-widgets/src/lib/workspace/workspace.component';
+import { WorkspaceContainerComponent } from './workspace-container.component';
+import { PanelModule } from 'primeng/panel';
+import { ToastModule } from 'primeng/toast';
+import { ButtonModule } from 'primeng/button';
+import { SharedWidgetsModule } from 'projects/shared-widgets/src/lib/shared-widgets.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    PanelModule,
+    ToastModule,
+    ButtonModule,
+    SharedWidgetsModule
   ],
-  declarations: [WorkspaceComponent, WorkspaceContainerComponent],
+  declarations: [ WorkspaceContainerComponent],
   entryComponents: [ WorkspaceContainerComponent ]
 })
 export class WorkspaceModule {

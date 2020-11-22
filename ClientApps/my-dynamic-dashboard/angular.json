@@ -30,8 +30,9 @@
             "styles": [
               "src/styles.scss",
               "node_modules/primeicons/primeicons.css",
-              "node_modules/primeng/resources/themes/saga-blue/theme.css",
-              "node_modules/primeng/resources/primeng.min.css"
+              "node_modules/primeng/resources/themes/md-light-deeppurple/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeflex/primeflex.css"
             ],
             "scripts": []
           },
@@ -127,11 +128,51 @@
         }
       }
     },
+    "primeng-dynamic-core": {
+      "projectType": "library",
+      "root": "projects/primeng-dynamic-core",
+      "sourceRoot": "projects/primeng-dynamic-core/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/primeng-dynamic-core/tsconfig.lib.json",
+            "project": "projects/primeng-dynamic-core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/primeng-dynamic-core/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/primeng-dynamic-core/src/test.ts",
+            "tsConfig": "projects/primeng-dynamic-core/tsconfig.spec.json",
+            "karmaConfig": "projects/primeng-dynamic-core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/primeng-dynamic-core/tsconfig.lib.json",
+              "projects/primeng-dynamic-core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
     "shared-widgets": {
       "projectType": "library",
       "root": "projects/shared-widgets",
       "sourceRoot": "projects/shared-widgets/src",
-      "prefix": "widgets",
+      "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -167,38 +208,38 @@
         }
       }
     },
-    "primeng-dynamic-core": {
+    "md-dynamic-core": {
       "projectType": "library",
-      "root": "projects/primeng-dynamic-core",
-      "sourceRoot": "projects/primeng-dynamic-core/src",
+      "root": "projects/md-dynamic-core",
+      "sourceRoot": "projects/md-dynamic-core/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/primeng-dynamic-core/tsconfig.lib.json",
-            "project": "projects/primeng-dynamic-core/ng-package.json"
+            "tsConfig": "projects/md-dynamic-core/tsconfig.lib.json",
+            "project": "projects/md-dynamic-core/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/primeng-dynamic-core/tsconfig.lib.prod.json"
+              "tsConfig": "projects/md-dynamic-core/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/primeng-dynamic-core/src/test.ts",
-            "tsConfig": "projects/primeng-dynamic-core/tsconfig.spec.json",
-            "karmaConfig": "projects/primeng-dynamic-core/karma.conf.js"
+            "main": "projects/md-dynamic-core/src/test.ts",
+            "tsConfig": "projects/md-dynamic-core/tsconfig.spec.json",
+            "karmaConfig": "projects/md-dynamic-core/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/primeng-dynamic-core/tsconfig.lib.json",
-              "projects/primeng-dynamic-core/tsconfig.spec.json"
+              "projects/md-dynamic-core/tsconfig.lib.json",
+              "projects/md-dynamic-core/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

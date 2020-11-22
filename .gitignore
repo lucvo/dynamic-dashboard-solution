@@ -27,3 +27,6 @@
 /Services/.vs/LEASolution/v16/TestStore/0/*.manifest
 .DS_Store
 /ClientApps/dist
+ClientApps/dynamic-framework/package-lock.json
+ClientApps/dynamic-framework/projects/primeng-dynamic-core/ng-package.json
+ClientApps/my-dynamic-dashboard/package-lock.json
