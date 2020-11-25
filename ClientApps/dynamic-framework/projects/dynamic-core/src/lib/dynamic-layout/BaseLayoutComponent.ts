@@ -76,6 +76,7 @@ export class BaseLayoutComponent implements OnInit, AfterViewInit {
       const factory = moduleRef.componentFactoryResolver.resolveComponentFactory(rootComponent);
       const componentRef = viewContainerRef.createComponent(factory);
       const instance = componentRef.instance as TemplateCardContainer;
+      item.extra = this.data;
       instance.item = item;
       instance.formGroup = this.formGroup;
     }catch (error) {
