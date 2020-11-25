@@ -5,7 +5,6 @@ import { DashboardService, DYNAMIC_MODULES_MAP, IMappedModules, BaseLayoutCompon
 @Component({
   selector: 'app-panel-layout',
   templateUrl: './panel-layout.component.html',
-  styleUrls: ['./panel-layout.component.scss']
 })
 export class PanelLayoutComponent extends BaseLayoutComponent {
 

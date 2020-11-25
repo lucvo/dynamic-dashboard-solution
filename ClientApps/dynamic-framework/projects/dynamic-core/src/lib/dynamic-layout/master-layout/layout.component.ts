@@ -14,7 +14,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent extends BaseLayoutComponent {
-
   constructor(
     cd: ChangeDetectorRef,
     injector: Injector,

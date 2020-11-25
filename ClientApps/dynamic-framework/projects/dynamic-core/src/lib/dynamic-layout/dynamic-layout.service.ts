@@ -4,7 +4,6 @@ import { BehaviorSubject } from 'rxjs';
 
 import { LayoutContent, PageSetting } from '../models';
 import { BaseSettingsService } from '../services/base-settings.service';
-import { ActivatedRoute } from '@angular/router';
 import { map, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs/internal/Observable';
 

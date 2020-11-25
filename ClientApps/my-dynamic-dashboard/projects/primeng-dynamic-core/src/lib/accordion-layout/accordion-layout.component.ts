@@ -3,10 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { DashboardService, DYNAMIC_MODULES_MAP, IMappedModules, BaseLayoutComponent } from 'dynamic-core';
 
 @Component({
-  selector: 'app-tab-layout',
-  templateUrl: './tab-layout.component.html',
+  selector: 'app-accordion-layout',
+  templateUrl: './accordion-layout.component.html',
 })
-export class TabLayoutComponent extends BaseLayoutComponent {
+export class AccordionLayoutComponent extends BaseLayoutComponent {
 
   constructor(cd: ChangeDetectorRef,
               injector: Injector,
