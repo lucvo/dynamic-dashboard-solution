@@ -1,0 +1,9 @@
+<div class="p-grid">
+  <div class="p-col" *ngFor="let container of containers">
+    <p-tabView>
+      <p-tabPanel [header]="item.title" *ngFor="let item of container.items; let i = index" [selected]="i == 0">
+        <ng-template appLayouOutlet [item]="item"></ng-template>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+</div>

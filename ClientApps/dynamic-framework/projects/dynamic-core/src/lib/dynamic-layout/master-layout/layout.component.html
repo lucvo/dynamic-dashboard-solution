@@ -1,0 +1,7 @@
+<div class="p-grid">
+  <div class="p-col" *ngFor="let container of containers">
+    <div class="box" *ngFor="let item of container.items">
+      <ng-template appLayouOutlet [item]="item"></ng-template>
+    </div>
+  </div>
+</div>

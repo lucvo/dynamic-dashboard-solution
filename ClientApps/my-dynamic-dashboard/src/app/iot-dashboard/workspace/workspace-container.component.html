@@ -1,0 +1,24 @@
+<div class="p-grid">
+  <div class="p-col-12 p-md-6 p-lg-7">
+    <p-panel header="My Wall" [toggleable]="true">
+      <ng-template pTemplate="icons">
+        <button pButton class="p-panel-header-icon p-link" icon="pi pi-cog"></button>
+      </ng-template>
+      <app-activity-feed></app-activity-feed>
+    </p-panel>
+  </div>
+  <div class="p-col-12 p-md-6 p-lg-5">
+    <div class="p-grid">
+      <div class="p-col-12">
+        <p-panel header="Workspace" [toggleable]="true">
+          <app-workspace></app-workspace>
+        </p-panel>
+      </div>
+      <div class="p-col-12">
+        <p-panel header="Projects" [toggleable]="true">
+          <app-projects></app-projects>
+        </p-panel>
+      </div>
+    </div>
+  </div>
+</div>

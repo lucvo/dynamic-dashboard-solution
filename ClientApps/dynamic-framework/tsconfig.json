@@ -1,0 +1,33 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "dynamic-core": [
+        "dist/dynamic-core/dynamic-core",
+        "dist/dynamic-core"
+      ],
+      "primeng-dynamic-core": [
+        "dist/primeng-dynamic-core/primeng-dynamic-core",
+        "dist/primeng-dynamic-core"
+      ],
+      "app-core": [
+        "dist/app-core/app-core",
+        "dist/app-core"
+      ]
+    }
+  }
+}
