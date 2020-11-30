@@ -5,7 +5,7 @@ import {
 
 import { DashboardService } from '../dynamic-layout.service';
 import { IMappedModules, DYNAMIC_MODULES_MAP } from '../mapped-modules.interface';
-import { BaseLayoutComponent } from '../BaseLayoutComponent';
+import { BaseLayoutComponent } from '../dynamic-layout.component.base';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

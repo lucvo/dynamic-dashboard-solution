@@ -12,11 +12,12 @@ import { TemplateCardContainer } from './template-card/template-card.container';
 import { ActivatedRoute } from '@angular/router';
 import { Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { BaseDynamicComponent } from '../base-dynamic.component';
 
 @Component({
   template: ' ',
 })
-export class BaseLayoutComponent implements OnInit, AfterViewInit {
+export class BaseLayoutComponent extends BaseDynamicComponent  implements OnInit, AfterViewInit {
   @ViewChildren(LayoutOutletDirective) dashboardOutlet: QueryList<LayoutOutletDirective>;
   @Input() formGroup: FormGroup;
   @Input() data: any;
@@ -28,7 +29,9 @@ export class BaseLayoutComponent implements OnInit, AfterViewInit {
     protected service: DashboardService,
     private route: ActivatedRoute,
     @Inject(DYNAMIC_MODULES_MAP) protected modulesMap: IMappedModules
-  ) { }
+  ) {
+    super();
+  }
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
@@ -73,12 +76,9 @@ export class BaseLayoutComponent implements OnInit, AfterViewInit {
       const moduleRef = moduleFactory.create(this.injector);
       console.log(item.cName);
       const rootComponent = (moduleFactory.moduleType as DynamicModuleType).entryComponents[`${item.cName}ContainerComponent`];
-      const factory = moduleRef.componentFactoryResolver.resolveComponentFactory(rootComponent);
-      const componentRef = viewContainerRef.createComponent(factory);
-      const instance = componentRef.instance as TemplateCardContainer;
-      item.extra = this.data;
-      instance.item = item;
-      instance.formGroup = this.formGroup;
+      const instanst = this.resolve(moduleRef, rootComponent, viewContainerRef) as TemplateCardContainer;
+      this.bind(item, instanst);
+
     }catch (error) {
       console.error(error.message);
     }
@@ -88,5 +88,10 @@ export class BaseLayoutComponent implements OnInit, AfterViewInit {
     const state = this.containers;
     state[trackIndex].items = items as Array<PageSetting>;
     this.service.setState(state);
+  }
+  bind(item: any, instance: any): void {
+    item.extra = this.data;
+    instance.item = item;
+    instance.formGroup = this.formGroup;
   }
 }
