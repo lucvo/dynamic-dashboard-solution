@@ -1,1 +1,24 @@
-<router-outlet></router-outlet>
+<div class="p-grid">
+    <div class="p-col-12">
+        <p-toolbar>
+            <div class="p-toolbar-group-left">
+                <p-button type="button" (click)="visibleSidebar = true" icon="pi pi-bars"></p-button>
+            </div>
+
+            <div class="p-toolbar-group-right">
+                <p-button icon="pi pi-upload" styleClass="p-button-danger"></p-button>
+            </div>
+        </p-toolbar>
+        <p-sidebar [(visible)]="visibleSidebar" [baseZIndex]="10000">
+            <h1 style="font-weight:normal">Left Sidebar</h1>
+        </p-sidebar>
+    </div>
+</div>
+<div class="p-grid">
+    <div class="p-col-12">
+        <p-breadcrumb [model]="breadcrumbItems" [home]="home"></p-breadcrumb>
+    </div>
+</div>
+<div style="">
+    <router-outlet></router-outlet>
+</div>

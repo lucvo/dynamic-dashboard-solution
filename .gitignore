@@ -30,3 +30,4 @@
 ClientApps/dynamic-framework/package-lock.json
 ClientApps/dynamic-framework/projects/primeng-dynamic-core/ng-package.json
 ClientApps/my-dynamic-dashboard/package-lock.json
+ClientApps/node_modules

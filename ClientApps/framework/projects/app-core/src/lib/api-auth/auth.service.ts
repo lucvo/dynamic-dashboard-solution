@@ -46,7 +46,7 @@ export class AuthService implements OnDestroy {
           console.log('Success');
         })
         .catch((err) => {
-          console.log(err);
+          console.error(err);
         });
     });
 
