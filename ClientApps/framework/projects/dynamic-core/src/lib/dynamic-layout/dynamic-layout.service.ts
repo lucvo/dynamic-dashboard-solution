@@ -3,9 +3,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 import { LayoutContent, PageSetting } from '../models';
-import { BaseSettingsService } from '../services/base-settings.service';
-import { ActivatedRoute } from '@angular/router';
-import { map, tap } from 'rxjs/operators';
+import { LayoutSettingsService } from '../services/layout-settings.service';
+import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
@@ -16,7 +15,7 @@ export class DashboardService {
   historyState: Array<LayoutContent> = [];
   private subject = new BehaviorSubject<LayoutContent[]>(this.historyState);
 
-  constructor(private settingsService: BaseSettingsService) {
+  constructor(private settingsService: LayoutSettingsService) {
 
   }
 

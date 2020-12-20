@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Observable, throwError, ReplaySubject, EMPTY } from 'rxjs';
 import { catchError, map, finalize } from 'rxjs/operators';
-import { MessageService } from 'primeng/api';
-import { AuthService } from '../api-auth';
+import { AuthService, TokenService } from '../auth';
 
 @Injectable()
 export class CoreInterceptor implements HttpInterceptor {
@@ -13,7 +12,7 @@ export class CoreInterceptor implements HttpInterceptor {
   private _pendingRequestsStatus: ReplaySubject<boolean> = new ReplaySubject<boolean>();
   constructor(
     private authService: AuthService,
-    private messageService: MessageService) { }
+    private tokenService: TokenService) { }
 
   get pendingRequestsStatus(): Observable<boolean> {
     return this._pendingRequestsStatus.asObservable();
@@ -23,9 +22,6 @@ export class CoreInterceptor implements HttpInterceptor {
     return this._pendingRequests;
   }
 
-  showTopCenter() {
-    this.messageService.add({ key: 'tc', severity: 'warn', summary: 'Info Message', detail: 'PrimeNG rocks' });
-  }
 
   intercept(
     req: HttpRequest<any>,
@@ -43,7 +39,7 @@ export class CoreInterceptor implements HttpInterceptor {
     }
 
     let handleError = true;
-    const accessToken = this.authService.getAccessToken();
+    const accessToken = this.tokenService.getToken();
     if (accessToken) {
       handleError = !req.headers.has('handle-error') || req.headers.get('handle-error') === 'true';
 
@@ -63,7 +59,6 @@ export class CoreInterceptor implements HttpInterceptor {
         return event;
       }),
       catchError(error => {
-        this.messageService.clear();
         if (error.status === 401) {
           this.authService.login();
           return EMPTY;

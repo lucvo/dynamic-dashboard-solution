@@ -5,6 +5,6 @@
   "license": "MIT",
   "private":"true",
   "workspaces":[
-    "dashboards", "framework", "smart-learning", "micro-app"
+    "dashboards", "framework", "smart-learning", "micro-app", "shared-lib"
   ]
 }

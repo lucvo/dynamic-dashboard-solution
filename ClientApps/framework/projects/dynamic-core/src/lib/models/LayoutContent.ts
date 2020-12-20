@@ -1,4 +1,3 @@
-import { FormGroup } from '@angular/forms';
 
 export interface LayoutContent {
   items: Array<PageSetting>;

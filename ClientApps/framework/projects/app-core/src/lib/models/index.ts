@@ -1,9 +1,4 @@
-export * from './MessageEntity';
-export * from './AuditBaseEntity';
-export * from './TokenItem';
-export * from './UserProfile';
-export * from './Role';
-export * from './AppSettings';
-export * from './AppUser';
-export * from './UserPermissions';
+export * from './message';
+export * from './entity';
+export * from './account';
 

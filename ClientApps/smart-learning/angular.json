@@ -1,5 +1,5 @@
 {
-  "$schema": "../node_modules/@angular/cli/lib/config/schema.json",
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -122,7 +122,6 @@
             ],
             "scripts": [],
             "extraWebpackConfig": "projects/shell/webpack.config.js"
-
           }
         },
         "lint": {
@@ -203,7 +202,6 @@
             ],
             "scripts": [],
             "extraWebpackConfig": "projects/admin/webpack.config.js"
-
           },
           "configurations": {
             "production": {
@@ -246,7 +244,6 @@
             "production": {
               "browserTarget": "admin:build:production",
               "extraWebpackConfig": "projects/admin/webpack.prod.config.js"
-
             }
           }
         },
@@ -272,7 +269,6 @@
             ],
             "scripts": [],
             "extraWebpackConfig": "projects/admin/webpack.config.js"
-
           }
         },
         "lint": {
@@ -301,9 +297,11 @@
           }
         }
       }
-    }},
+    }
+  },
   "cli": {
-    "analytics": "fea1a0d3-0461-4d3c-b764-016da8c815eb"
+    "analytics": "fea1a0d3-0461-4d3c-b764-016da8c815eb",
+    "packageManager": "yarn"
   },
   "defaultProject": "shell"
 }
