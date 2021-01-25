@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpEvent, HttpRequest, HttpResponse, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ListResponse, ApiResponse } from '../responses';
 import { IEntity } from '../models';
@@ -18,7 +18,7 @@ export class BaseApiService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  
+
   list<T>(query: string,  params: HttpParams): Observable<ListResponse<T>> {
     this.httpOptions = { ...this.httpOptions, ...{ params: params } };
     return this.httpClient

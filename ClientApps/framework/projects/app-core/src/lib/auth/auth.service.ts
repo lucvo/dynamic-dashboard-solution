@@ -1,6 +1,5 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { UserManager, UserManagerSettings, User } from 'oidc-client';
-import { HttpClient } from '@angular/common/http';
 import { AppSetting, AppSettingService } from '../appSetting';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -21,7 +20,7 @@ export class AuthService {
         this.applySettings(setting);
       }));
     }
-  
+
   public static logout() {
     window.location.replace('login');
   }

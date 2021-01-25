@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs/internal/Observable';
 import { BehaviorSubject } from 'rxjs';
 
 import { LayoutContent, PageSetting } from '../models';
 import { LayoutSettingsService } from '../services/layout-settings.service';
-import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
   providedIn: 'root',

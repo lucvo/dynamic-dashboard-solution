@@ -7,10 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "pack-d": "ng build  --prod dynamic-core && cd ../dist/dynamic-core && npm pack",
-    "pack-p": "ng build  --prod primeng-dynamic-core && cd ../dist/prime-dynamic-core && npm pack",
-    "pack-a": "ng build  --prod app-core && cd ../dist/app-core && npm pack",
-    "pack": "npm run pack-a & npm run pack-d"
+    "pack-d": "ng build  --prod dynamic-core && cd ../dist/dynamic-core && yarn pack",
+    "pack-p": "ng build  --prod primeng-dynamic-core && cd ../dist/prime-dynamic-core && yarn pack",
+    "pack-a": "ng build  --prod app-core && cd ../dist/app-core && yarn pack",
+    "pack": "yarn run pack-a & yarn run pack-d"
   },
   "private": true,
   "dependencies": {
